@@ -20,19 +20,37 @@ namespace employee_app
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Emp_detail> users = new List<Emp_detail>();
+
         public MainWindow()
         {
             InitializeComponent();
+            emp_list.ItemsSource = users ;
         }
 
-        private void textBox_Copy3_TextChanged(object sender, TextChangedEventArgs e)
+       
+    
+
+    private void button_Click(object sender, RoutedEventArgs e)
         {
+            Emp_detail newUser = new Emp_detail();
+            newUser.UserName= textBox_name.Text;
+            string emp_id = textBox_id.Text;
+            newUser.UserId = Convert.ToInt32(emp_id);
+
+            newUser.UserAddress = textBox_add.Text;
+            string emp_zip = textBox_zip.Text;
+            newUser.UserZip = Convert.ToInt32(emp_zip);
+
+
+
+            users.Add(newUser);
+            emp_list.ItemsSource = null;
+            emp_list.ItemsSource = users;
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
+
     }
 }
