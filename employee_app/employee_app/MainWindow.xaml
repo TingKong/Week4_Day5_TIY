@@ -5,39 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:employee_app"
         mc:Ignorable="d"
-        Title="MainWindow" Height="799" Width="525">
+        Title="MainWindow" Height="670.667" Width="622">
     <Grid x:Name="Body">
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\Ting\Source\Repos\Week4_Day5_TIY\images\bg.jpg"/>
         </Grid.Background>
-        <Label x:Name="Title" Content="Employee App&#xD;&#xA;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
+        <Label x:Name="Title" Content="employee app&#xA;" HorizontalAlignment="Left" Margin="21,14,0,0" VerticalAlignment="Top" FontSize="30" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
         <Label x:Name="Emp_Name" Content="employee name&#xA;" HorizontalAlignment="Left" Margin="21,77,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <TextBox x:Name="textBox_name" HorizontalAlignment="Left" Height="23" Margin="185,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="291" />
+        <TextBox x:Name="textBox_name" HorizontalAlignment="Left" Height="26" Margin="185,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406" />
         <Label x:Name="Emp_ID" Content="employee id&#xA;" HorizontalAlignment="Left" Margin="21,120,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <TextBox x:Name="textBox_id" HorizontalAlignment="Left" Height="23" Margin="185,123,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="291"/>
+        <TextBox x:Name="textBox_id" HorizontalAlignment="Left" Height="26" Margin="185,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406"/>
         <Label x:Name="address" Content="address&#xA;" HorizontalAlignment="Left" Margin="21,164,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <TextBox x:Name="textBox_add" HorizontalAlignment="Left" Height="23" Margin="185,167,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="291"/>
+        <TextBox x:Name="textBox_add" HorizontalAlignment="Left" Height="26" Margin="185,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406"/>
         <Label x:Name="zip" Content="zip code&#xA;" HorizontalAlignment="Left" Margin="21,206,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <TextBox x:Name="textBox_zip" HorizontalAlignment="Left" Height="23" Margin="185,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="291"/>
+        <TextBox x:Name="textBox_zip" HorizontalAlignment="Left" Height="27" Margin="185,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="406"/>
         <Label x:Name="hiredate" Content="hire date&#xA;" HorizontalAlignment="Left" Margin="21,247,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <Label x:Name="term_date" Content="term date&#xA;" HorizontalAlignment="Left" Margin="302,242,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000"/>
-        <TextBox x:Name="textBox_termdate" HorizontalAlignment="Left" Height="23" Margin="394,250,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
-        <TextBox x:Name="textBox_hireddate" HorizontalAlignment="Left" Height="23" Margin="185,250,0,0" TextWrapping="Wrap" Text="090909" VerticalAlignment="Top" Width="82" />
-        <Button x:Name="submit_btn" Content="submit" HorizontalAlignment="Left" Margin="342,301,0,0" VerticalAlignment="Top" Width="134" Height="40" Click="button_Click" FontSize="22" Background="#4C000004" BorderBrush="#00707070" Foreground="White"/>
-        <ListView x:Name="emp_list" HorizontalAlignment="Left" Height="370" Margin="21,359,0,0" VerticalAlignment="Top" Width="470" >
+        <Label x:Name="term_date" Content="term date&#xA;" HorizontalAlignment="Left" Margin="373,244,0,0" VerticalAlignment="Top" FontSize="18" FontFamily="Nirmala UI" Foreground="#FF7C0000" Width="88"/>
+        <TextBox x:Name="textBox_hireddate" HorizontalAlignment="Left" Height="27" Margin="185,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" />
+        <TextBox x:Name="textBox_termdate" HorizontalAlignment="Left" Height="27" Margin="496,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
+        <Button x:Name="submit_btn" Content="submit" HorizontalAlignment="Left" Margin="458,301,0,0" VerticalAlignment="Top" Width="133" Height="45" Click="button_Click" FontSize="22" Background="#FF7A3612" BorderBrush="#00707070" Foreground="White"/>
+        <ListView x:Name="emp_list" Margin="0,379,21.333,0" HorizontalAlignment="Right" Width="573" Height="215" VerticalAlignment="Top"  >
             <ListView.View>
-            <GridView>
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding UserName}" />
+                <GridView>
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding UserId}" />
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding UserAddress}" />
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding UserZip}" />
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding UserHireDate}" />
 
-                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding UserTerm}" />
+                    <GridViewColumn Header="Name" Width="120" DisplayMemberBinding="{Binding UserName}" />
+                    <GridViewColumn Header="Address" Width="50" DisplayMemberBinding="{Binding UserAddress}" />
+                    <GridViewColumn Header="Zip Code" Width="120" DisplayMemberBinding="{Binding UserZip}" />
+                    <GridViewColumn Header="Hired Date" Width="120" DisplayMemberBinding="{Binding UserHireDate}" />
+
+                    <GridViewColumn Header="Term Date" Width="120" DisplayMemberBinding="{Binding UserTerm}" />
 
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="save_btn" Content="save" HorizontalAlignment="Left" Margin="350,301,0,0" VerticalAlignment="Top" Width="94" Height="45" Click="button_Click_save" FontSize="22" Background="#FF7A3612" BorderBrush="#00707070" Foreground="White"/>
 
     </Grid>
 </Window>
