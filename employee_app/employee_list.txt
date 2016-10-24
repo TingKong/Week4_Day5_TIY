@@ -1,4 +1,1 @@
-
-id: 2, employee name: ting, address: 222, zip: 22222 , hire date: 22, termination date: 22
-id: 5 | employee name: t | address: t | zip: 4 | hire date: 5 | termination date: 5
-id: 3 | employee name: Chris | address: 333 Grand River | zip: 33333 | hire date: March 20, 2013 | termination date: Null
+id: 2 | employee name: Ting | address: 333 Grand River | zip: 33333 | hire date: June 20, 2013 | termination date: nullid:3| employee name: ronda | address: 3 | zip: 2 | hire date: 2 | termination date: 2

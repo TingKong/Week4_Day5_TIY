@@ -42,8 +42,7 @@ namespace employee_app
             newUser.UserId = Convert.ToInt32(emp_id);
 
             newUser.UserAddress = textBox_add.Text;
-            string emp_zip = textBox_zip.Text;
-            newUser.UserZip = Convert.ToInt32(emp_zip);
+            newUser.UserZip = textBox_zip.Text;
 
             newUser.UserHireDate = textBox_hireddate.Text;
             newUser.UserTerm = textBox_termdate.Text;
@@ -52,15 +51,20 @@ namespace employee_app
             users.Add(newUser);
             emp_list.ItemsSource = null;
             emp_list.ItemsSource = users;
-
-
+          
             string fileName = "C:\\Users\\Ting\\Source\\Repos\\Week4_Day5_TIY\\employee_app\\employee_list.txt";
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                sw.WriteLine("id: " + textBox_id.Text + " | employee name: " + textBox_name.Text + " | address: " + textBox_add.Text + " | zip: " + textBox_zip.Text + " | hire date: " + textBox_hireddate.Text + " | termination date: " + textBox_termdate.Text);
-
+               sw.WriteLine("id:" + textBox_id.Text + "| employee name: " + textBox_name.Text + " | address: " + textBox_add.Text + " | zip: " + textBox_zip.Text + " | hire date: " + textBox_hireddate.Text + " | termination date: " + textBox_termdate.Text);
+                //sw.WriteLine(textBox_id.Text +  "|" + textBox_name.Text + "|" + textBox_add.Text + "|" + textBox_zip.Text + "|" + textBox_hireddate.Text + "|" + textBox_termdate.Text);
             }
+            textBox_name.Text = String.Empty;
+            textBox_id.Text = String.Empty;
+            textBox_add.Text = String.Empty;
+            textBox_zip.Text = String.Empty;
+            textBox_hireddate.Text = String.Empty;
+            textBox_termdate.Text = String.Empty;
 
         }
 
@@ -70,13 +74,22 @@ namespace employee_app
             string fileName = "C:\\Users\\Ting\\Source\\Repos\\Week4_Day5_TIY\\employee_app\\employee_list.txt";
 
             StreamReader sr = new StreamReader(fileName);
-            sr.ReadLine();
-            while (sr.ReadLine() != null)
+            while (!sr.EndOfStream)
             {
+                string temp = sr.ReadLine();
+                string[] values = temp.Split('|');
                 Emp_detail newUser = new Emp_detail();
+                newUser.UserId = Convert.ToInt32(values[0].Replace("id: ", ""));
+                newUser.UserName = values[1].Replace("employee name: ", "");
+                newUser.UserAddress = values[2].Replace("address: ", ""); ;
+                newUser.UserZip = values[3].Replace("zip: ", "");
+                newUser.UserHireDate = values[4].Replace("hire date: ", "");
+                newUser.UserTerm = values[5].Replace("termination date: ", "");
 
                 users.Add(newUser);
             }
+            emp_list.ItemsSource = null;
+            emp_list.ItemsSource = users;
 
 
         }

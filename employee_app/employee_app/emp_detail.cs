@@ -12,7 +12,7 @@ namespace employee_app
         public string UserName { get; set; }
         public string UserAddress { get; set; }
 
-        public int UserZip { get; set; }
+        public string UserZip { get; set; }
 
         public string UserHireDate { get; set; }
 
