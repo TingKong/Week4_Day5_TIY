@@ -28,16 +28,10 @@ namespace employee_app
         {
             InitializeComponent();
             emp_list.ItemsSource = users ;
-          
+
         }
 
-        static void WriteFile(string file, List<Emp_detail> cycle)
-        {
-            
 
-
-            
-        }
 
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -59,24 +53,32 @@ namespace employee_app
             emp_list.ItemsSource = null;
             emp_list.ItemsSource = users;
 
-           
-            
 
-        }
-
-        private void button_Click_save(object sender, RoutedEventArgs e)
-        {
             string fileName = "C:\\Users\\Ting\\Source\\Repos\\Week4_Day5_TIY\\employee_app\\employee_list.txt";
 
             using (StreamWriter sw = new StreamWriter(fileName, true))
             {
-                sw.WriteLine(textBox_id.Text + ", " + textBox_name.Text + ", " + textBox_add.Text + ", " + textBox_zip.Text + " , " +  ", " + textBox_termdate.Text);
+                sw.WriteLine("id: " + textBox_id.Text + " | employee name: " + textBox_name.Text + " | address: " + textBox_add.Text + " | zip: " + textBox_zip.Text + " | hire date: " + textBox_hireddate.Text + " | termination date: " + textBox_termdate.Text);
 
             }
 
-        
+        }
 
-           
+        private void button_Click_load(object sender, RoutedEventArgs e)
+        {
+
+            string fileName = "C:\\Users\\Ting\\Source\\Repos\\Week4_Day5_TIY\\employee_app\\employee_list.txt";
+
+            StreamReader sr = new StreamReader(fileName);
+            sr.ReadLine();
+            while (sr.ReadLine() != null)
+            {
+                Emp_detail newUser = new Emp_detail();
+
+                users.Add(newUser);
+            }
+
+
         }
     }
 }

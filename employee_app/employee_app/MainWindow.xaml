@@ -24,7 +24,7 @@
         <TextBox x:Name="textBox_hireddate" HorizontalAlignment="Left" Height="27" Margin="185,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" />
         <TextBox x:Name="textBox_termdate" HorizontalAlignment="Left" Height="27" Margin="496,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
         <Button x:Name="submit_btn" Content="submit" HorizontalAlignment="Left" Margin="458,301,0,0" VerticalAlignment="Top" Width="133" Height="45" Click="button_Click" FontSize="22" Background="#FF7A3612" BorderBrush="#00707070" Foreground="White"/>
-        <ListView x:Name="emp_list" Margin="0,379,21.333,0" HorizontalAlignment="Right" Width="573" Height="215" VerticalAlignment="Top"  >
+        <ListView ItemsSource="{Binding Newuers}" x:Name="emp_list" Margin="0,379,21.333,0" HorizontalAlignment="Right" Width="573" Height="215" VerticalAlignment="Top"  >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding UserId}" />
@@ -39,7 +39,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="save_btn" Content="save" HorizontalAlignment="Left" Margin="350,301,0,0" VerticalAlignment="Top" Width="94" Height="45" Click="button_Click_save" FontSize="22" Background="#FF7A3612" BorderBrush="#00707070" Foreground="White"/>
+        <Button x:Name="save_btn" Content="load" HorizontalAlignment="Left" Margin="350,301,0,0" VerticalAlignment="Top" Width="94" Height="45" Click="button_Click_load" FontSize="22" Background="#667A3612" BorderBrush="#00707070" Foreground="White"/>
 
     </Grid>
 </Window>
