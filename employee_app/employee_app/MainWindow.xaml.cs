@@ -38,8 +38,8 @@ namespace employee_app
         {
             Emp_detail newUser = new Emp_detail();
             newUser.UserName= textBox_name.Text;
-            string emp_id = textBox_id.Text;
-            newUser.UserId = Convert.ToInt32(emp_id);
+            newUser.UserId = textBox_id.Text;
+             
 
             newUser.UserAddress = textBox_add.Text;
             newUser.UserZip = textBox_zip.Text;
@@ -79,7 +79,7 @@ namespace employee_app
                 string temp = sr.ReadLine();
                 string[] values = temp.Split('|');
                 Emp_detail newUser = new Emp_detail();
-                newUser.UserId = Convert.ToInt32(values[0].Replace("id: ", ""));
+                newUser.UserId = values[0].Replace("id:", "");
                 newUser.UserName = values[1].Replace("employee name: ", "");
                 newUser.UserAddress = values[2].Replace("address: ", ""); ;
                 newUser.UserZip = values[3].Replace("zip: ", "");
