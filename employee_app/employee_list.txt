@@ -1,12 +1,4 @@
 
-ting
-Ting
-1
-555 Colman
-55555
-05/06/2013
-Null
-1, Ting, 555, 55555 , , 5555
 id: 2, employee name: ting, address: 222, zip: 22222 , hire date: 22, termination date: 22
 id: 5 | employee name: t | address: t | zip: 4 | hire date: 5 | termination date: 5
 id: 3 | employee name: Chris | address: 333 Grand River | zip: 33333 | hire date: March 20, 2013 | termination date: Null
